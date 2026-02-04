@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+
+struct Address
+{
+    char city[20];
+    int pincode;
+};
+struct Student
+{
+    int id;
+    char name[20];
+    struct Address addr;
+};
+int main()
+{
+    struct Student s1;
+    s1.id = 101;
+    strcpy(s1.name, "Goutham");
+    strcpy(s1.addr.city, "Bangalore");
+    s1.addr.pincode = 560001;
+    printf("ID      : %d\n", s1.id);
+    printf("Name    : %s\n", s1.name);
+    printf("City    : %s\n", s1.addr.city);
+    printf("Pincode : %d\n", s1.addr.pincode);
+    return 0;
+}
